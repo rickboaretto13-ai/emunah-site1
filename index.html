@@ -3,151 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMUNAH | Igreja</title>
+<title>EMUNAH</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-  height: 100vh;
-  background: url('/storage/emulated/0/Pictures/WhatsApp/IMG-20260321-WA0007.jpg') no-repeat center center fixed;
+  margin: 0;
+  font-family: Arial;
+  background: url('IMG-20260321-WA0007.jpg') no-repeat center center fixed;
   background-size: cover;
-  overflow-x: hidden;
-}
-
-.overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95));
-  min-height: 100vh;
-  padding: 20px;
-  text-align: center;
   color: white;
 }
 
-/* ANIMAÇÃO */
-.fade-in {
-  animation: fade 2s ease-in-out;
+.overlay {
+  background: rgba(0,0,0,0.85);
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* TÍTULO */
 h1 {
-  font-size: 45px;
   color: gold;
-  margin-bottom: 10px;
-  text-shadow: 0 0 20px gold;
-}
-
-/* SUB */
-.sub {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* CARDS */
-.container {
-  margin-top: 30px;
-  display: grid;
-  gap: 15px;
+  font-size: 40px;
+  margin-top: 10px;
 }
 
 .card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  margin: 10px auto;
   padding: 15px;
   border-radius: 15px;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.2);
+  max-width: 500px;
+  backdrop-filter: blur(10px);
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+/* FOTO */
+.img-box {
+  margin-top: 20px;
+}
+
+.img-box img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px black;
 }
 
 /* BOTÃO */
 .btn {
-  margin-top: 25px;
-  display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(45deg, #25D366, #1ebe5d);
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: #25D366;
+  border-radius: 10px;
   color: white;
-  font-size: 18px;
-  border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 0 20px #25D366;
-  transition: 0.3s;
+  display: inline-block;
 }
 
-.btn:hover {
-  transform: scale(1.1);
+/* PLAYER */
+#player {
+  margin-top: 20px;
+  display: none;
 }
-
-/* VÍDEO */
-iframe {
-  margin-top: 25px;
-  width: 95%;
-  max-width: 600px;
-  height: 300px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
-/* RODAPÉ */
-.footer {
-  margin-top: 40px;
-  font-size: 14px;
-  opacity: 0.6;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="overlay fade-in">
+<div class="overlay">
 
 <h1>IGREJA EMUNAH</h1>
-<p class="sub">Um lugar de fé, transformação e presença de Deus</p>
 
-<div class="container">
+<div class="card">Terça - Minha família no altar (20:00)</div>
+<div class="card">Quarta - Oração e ensaio (20:00)</div>
+<div class="card">Quinta - Culto de libertação (20:00)</div>
+<div class="card">Sábado - Culto (15 em 15 dias às 16:00)</div>
+<div class="card">Domingo - Culto (19:00)</div>
 
-  <div class="card">🔥 Terça - Minha família no altar (20:00)</div>
-  <div class="card">🙏 Quarta - Oração e ensaio (20:00)</div>
-  <div class="card">🕊️ Quinta - Culto de libertação (20:00)</div>
-  <div class="card">✨ Sábado - Culto (15 em 15 dias às 16:00)</div>
-  <div class="card">⛪ Domingo - Culto (19:00)</div>
-
+<!-- FOTO EMBUTIDA -->
+<div class="img-box">
+  <img src="IMG-20260321-WA0007.jpg">
 </div>
 
-<!-- MÚSICA -->
-<h2 style="margin-top:30px;">🎶 Momento de Louvor</h2>
+<!-- BOTÃO LOUVOR -->
+<br>
+<button class="btn" onclick="playMusic()">
+🎵 Iniciar Louvor
+</button>
 
-<iframe 
-src="https://www.youtube.com/embed/cWA81k-7kp0?autoplay=1&mute=1"
-allow="autoplay">
-</iframe>
-
-<!-- BOTÃO -->
+<!-- WHATSAPP -->
+<br>
 <a class="btn" 
-href="https://wa.me/556496078723?text=Olá,%20vou%20confirmar%20minha%20presença%20no%20culto!" 
+href="https://wa.me/556496078723?text=Irei%20comparecer%20ao%20culto!" 
 target="_blank">
 Confirmar Presença
 </a>
 
-<div class="footer">
-© EMUNAH - Todos os direitos reservados
+<!-- YOUTUBE PLAYER -->
+<div id="player">
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/cWA81k-7kp0?autoplay=1"
+allow="autoplay">
+</iframe>
 </div>
 
 </div>
+
+<script>
+function playMusic() {
+  document.getElementById("player").style.display = "block";
+}
+</script>
 
 </body>
 </html>
