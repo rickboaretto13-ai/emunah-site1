@@ -3,123 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IGREJA EMUNAH</title>
+<title>EMUNAH - Igreja</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
-  overflow: hidden;
+  background: #111;
   color: white;
 }
 
-/* 🌌 FUNDO PARTICULAS */
-#particles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #111 0%, #000 100%);
-  overflow: hidden;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: gold;
-  border-radius: 50%;
-  animation: float 10s infinite linear;
-  opacity: 0.5;
-}
-
-@keyframes float {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
-}
-
-/* 🎬 INTRO IMAX */
+/* INTRO SIMPLES */
 #intro {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 10;
-}
-
-.logo {
-  font-size: 70px;
-  color: gold;
-  text-shadow: 0 0 40px gold;
-  animation: zoom 3s ease-in-out;
-  letter-spacing: 5px;
-}
-
-@keyframes zoom {
-  0% { transform: scale(0.3); opacity: 0; }
-  40% { opacity: 1; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
-
-/* 🌍 SITE PRINCIPAL */
-#site {
-  display: none;
-  position: relative;
-  z-index: 2;
-  background: url('IMG-20260321-WA0007.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-}
-
-.overlay {
-  background: rgba(0,0,0,0.85);
-  min-height: 100vh;
-  padding: 20px;
-  text-align: center;
-  backdrop-filter: blur(4px);
-}
-
-h1 {
-  color: gold;
-  font-size: 45px;
-  text-shadow: 0 0 15px gold;
-}
-
-.card {
-  background: rgba(255,255,255,0.08);
-  margin: 10px auto;
-  padding: 15px;
-  border-radius: 15px;
-  max-width: 500px;
-  box-shadow: 0 0 15px rgba(255,215,0,0.2);
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 15px 30px;
-  background: #25D366;
-  color: white;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 20px rgba(37,211,102,0.4);
-}
-</style>
-</head>
-
-<body>
-
-<!-- 🌌 PARTICULAS -->
-<div id="particles"></div>
-
-<!-- 🎬 INTRO -->
-<div id="intro" style="
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -127,59 +22,105 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-">
+  z-index: 10;
+}
 
-  <img src="IMG-20260319-WA0002.jpg" 
-       style="
-       width: 180px;
-       height: auto;
-       border-radius: 10px;
-       ">
-</div>
+#intro img {
+  width: 180px;
+  border-radius: 10px;
+}
 
-<!-- 🔊 AUDIO -->
+/* CONTEÚDO */
+#site {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: gold;
+}
+
+.card {
+  background: #222;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+/* IMAGEM */
+.culto-img {
+  margin-top: 20px;
+}
+
+.culto-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+}
+
+/* BOTÃO */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔊 ÁUDIO -->
 <audio id="audio" autoplay loop>
-  <source src="louvor.m4a" type="audio/mp4">
+  <source src="louvor.mp3" type="audio/mpeg">
 </audio>
+
+<!-- 🎬 INTRO -->
+<div id="intro">
+  <img src="IMG-20260319-WA0002.jpg" alt="EMUNAH">
+</div>
 
 <!-- 🌍 SITE -->
 <div id="site">
-  <div class="overlay">
 
-    <h1>IGREJA EMUNAH</h1>
+<h1>IGREJA EMUNAH</h1>
 
-    <div class="card">Terça - Minha família no altar (20:00)</div>
-    <div class="card">Quarta - Oração e ensaio (20:00)</div>
-    <div class="card">Quinta - Culto de libertação (20:00)</div>
-    <div class="card">Sábado - Culto (15 em 15 dias - 16:00)</div>
-    <div class="card">Domingo - Culto (19:00)</div>
-    
-    <div style="margin-top:20px;">
-  <img src="IMG-20260321-WA0007.jpg" 
-       style="
-       width: 100%;
-       max-width: 500px;
-       border-radius: 20px;
-       box-shadow: 0 0 25px rgba(255,215,0,0.4);
-       border: 2px solid gold;
-       ">
-    </div>
+<div class="card">Terça - Minha família no altar (20:00 Horas - BR)</div>
+<div class="card">Quarta - Oração e ensaio (20:00 Horas - BR)</div>
+<div class="card">Quinta - Culto de libertação (20:00 Horas - BR)</div>
+<div class="card">Sábado - Culto a cada 15 dias (16:00 Horas - BR)</div>
+<div class="card">Domingo - Culto (19:00 Horas - BR)</div>
 
-    <a class="btn" href="https://wa.me/556496078723?text=Irei%20comparecer!" target="_blank">
-      Confirmar Presença
-    </a>
-
-  </div>
+<!-- 🖼️ FOTO ABAIXO DOS CULTOS -->
+<div class="culto-img">
+  <img src="IMG-20260321-WA0007.jpg" alt="Igreja EMUNAH">
 </div>
 
+<!-- 📲 WHATSAPP -->
+<a class="btn" 
+href="https://wa.me/556496078723?text=Irei%20comparecer%20ao%20culto!" 
+target="_blank">
+Confirmar Presença
+</a>
+
+</div>
+
+<!-- ⚙️ SCRIPT -->
 <script>
-// 🎬 INTRO
+
+// sair da intro
 setTimeout(() => {
   document.getElementById("intro").style.display = "none";
   document.getElementById("site").style.display = "block";
-}, 3200);
+}, 2000);
 
-// 🔊 ÁUDIO IMAX (melhor tentativa possível)
+// áudio (fallback)
 function playAudio() {
   const audio = document.getElementById("audio");
   audio.play().catch(()=>{});
@@ -188,17 +129,6 @@ function playAudio() {
 window.addEventListener("load", playAudio);
 document.addEventListener("click", playAudio, { once: true });
 
-// 🌌 PARTICULAS DINÂMICAS
-const particles = document.getElementById("particles");
-
-for (let i = 0; i < 60; i++) {
-  let p = document.createElement("div");
-  p.className = "particle";
-  p.style.left = Math.random() * 100 + "vw";
-  p.style.animationDuration = (5 + Math.random() * 10) + "s";
-  p.style.opacity = Math.random();
-  particles.appendChild(p);
-}
 </script>
 
 </body>
