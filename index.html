@@ -73,11 +73,11 @@ h1 {
 
 <h1>IGREJA EMUNAH</h1>
 
-<div class="card">Terça - Minha família no altar (20:00)</div>
-<div class="card">Quarta - Oração e ensaio (20:00)</div>
-<div class="card">Quinta - Culto de libertação (20:00)</div>
-<div class="card">Sábado - Culto (15 em 15 dias às 16:00)</div>
-<div class="card">Domingo - Culto (19:00)</div>
+<div class="card">Terça - Minha família no altar (20:00 BR)</div>
+<div class="card">Quarta - Oração e ensaio (20:00 BR)</div>
+<div class="card">Quinta - Culto de libertação (20:00 BR)</div>
+<div class="card">Sábado - Culto (15 em 15 dias às 16:00 BR)</div>
+<div class="card">Domingo - Culto (19:00 BR)</div>
 
 <!-- FOTO EMBUTIDA -->
 <div class="img-box">
@@ -98,20 +98,30 @@ target="_blank">
 Confirmar Presença
 </a>
 
-<!-- YOUTUBE PLAYER -->
-<div id="player">
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/cWA81k-7kp0?autoplay=1"
-allow="autoplay">
+<!-- MÚSICA AUTOMÁTICA GOD MODE -->
+<iframe
+  id="music"
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/cWA81k-7kp0?autoplay=1&loop=1&playlist=cWA81k-7kp0&mute=0"
+  allow="autoplay">
 </iframe>
-</div>
-
-</div>
 
 <script>
-function playMusic() {
-  document.getElementById("player").style.display = "block";
+function tryPlayMusic() {
+  const iframe = document.getElementById("music");
+  iframe.src = iframe.src; // força tentativa de reprodução
 }
+
+// tenta ao abrir
+window.addEventListener("load", () => {
+  tryPlayMusic();
+});
+
+// garante que toca no primeiro toque da tela (sem botão)
+document.addEventListener("touchstart", () => {
+  tryPlayMusic();
+}, { once: true });
 </script>
 
 </body>
