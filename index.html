@@ -48,21 +48,6 @@ h1{
   letter-spacing:3px;
 }
 
-/* CONTADOR */
-.counter-box{
-  background:rgba(255,215,0,0.1);
-  padding:15px;
-  border-radius:20px;
-  margin-bottom:25px;
-  font-weight:600;
-  box-shadow:0 0 20px rgba(255,215,0,0.4);
-}
-
-.counter-number{
-  font-size:28px;
-  color:#FFD700;
-}
-
 /* CARDS */
 .card{
   position:relative;
@@ -120,7 +105,7 @@ h1{
 .player{
   position:fixed;
   bottom:20px;
-  right:20px;
+  left:20px;
   background:rgba(0,0,0,0.8);
   padding:15px 20px;
   border-radius:50px;
@@ -139,6 +124,33 @@ h1{
   font-weight:600;
 }
 
+/* BOTÃO WHATSAPP FLUTUANTE */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:65px;
+  height:65px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 25px rgba(37,211,102,0.8);
+  animation:pulseWpp 2s infinite;
+  text-decoration:none;
+}
+
+.whatsapp img{
+  width:35px;
+}
+
+@keyframes pulseWpp{
+  0%{box-shadow:0 0 10px rgba(37,211,102,0.5);}
+  50%{box-shadow:0 0 30px rgba(37,211,102,1);}
+  100%{box-shadow:0 0 10px rgba(37,211,102,0.5);}
+}
+
 </style>
 </head>
 <body>
@@ -149,12 +161,6 @@ h1{
 
   <img src="IMG-20260319-WA0002.jpg" class="logo">
   <h1>IGREJA EMUNAH</h1>
-
-  <!-- CONTADOR -->
-  <div class="counter-box">
-    👥 Membros online agora:
-    <div class="counter-number" id="counter">0</div>
-  </div>
 
   <div class="card">
     Terça - Minha família no altar (20:00 Horas - BR)
@@ -194,6 +200,13 @@ h1{
   <source src="louvor.mp3" type="audio/mpeg">
 </audio>
 
+<!-- BOTÃO WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/556496078723?text=Irei%20comparecer%20ao%20culto!"
+   target="_blank">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
 <script>
 
 /* TOGGLE IMAGEM */
@@ -211,19 +224,6 @@ function toggleMusic(){
     audio.pause();
   }
 }
-
-/* CONTADOR FAKE ANIMADO */
-let count=0;
-let target=Math.floor(Math.random()*50)+50;
-
-let counterInterval=setInterval(()=>{
-  if(count<target){
-    count++;
-    document.getElementById("counter").innerText=count;
-  }else{
-    clearInterval(counterInterval);
-  }
-},40);
 
 /* FUNDO ESTRELAS */
 const canvas=document.getElementById("stars");
